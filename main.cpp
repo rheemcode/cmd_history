@@ -29,9 +29,7 @@ int main(void)
     string args;
     filesystem::path path = filesystem::current_path();
     cout << path.string() << ">";
-
-    filesystem::path historyFilePath = path /= ".cmd_history";
-    ofstream file(historyFilePath, ios_base::app);
+    ofstream file(".cmd_history", ios_base::app);
 
     while (getline(cin, args))
     {
